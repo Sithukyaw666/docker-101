@@ -6,8 +6,8 @@ RUN yarn build
 
 
 FROM node:16-alpine 
+COPY server/ /web/
 WORKDIR /web/
-COPY server/ web/
 RUN npm install -y
 COPY --from=client /app/build ./build
 ENTRYPOINT [ "npm","start" ]
