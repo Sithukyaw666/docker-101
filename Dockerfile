@@ -1,11 +1,11 @@
-FROM node:14.5.0-alpine AS client
+FROM node:16-alpine AS client
+COPY client/ /app/
 WORKDIR /app/
-COPY client/ app/
 RUN yarn install
 RUN yarn build
 
 
-FROM node:14.5.0-alpine 
+FROM node:16-alpine 
 WORKDIR /web/
 COPY server/ web/
 RUN npm install -y
