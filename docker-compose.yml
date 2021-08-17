@@ -1,8 +1,9 @@
-version: "3.9"
+version: "3"
 services:
   web:
     build: .
-    depends_on: mongo
+    depends_on:
+      - mongo
     ports:
       - "5000:5000"
     networks:
@@ -11,7 +12,7 @@ services:
     image: "mongo"
     volumes:
       - data-volume:/data/db
-    port:
+    ports:
       - "27017:27017"
     networks:
       - app-network
