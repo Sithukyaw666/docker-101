@@ -7,7 +7,7 @@ const cors = require("cors");
 const route = require("./routes/index");
 const PORT = process.env.PORT || 5000;
 
-const URI = "mongodb://127.0.0.1:27017/docker-101";
+const URI = "mongodb://mongo:27017/docker-101";
 mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true }, () =>
   console.log("connected to DB")
 );
